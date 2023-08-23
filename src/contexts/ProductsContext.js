@@ -39,10 +39,11 @@ function ProductsProvider({ children }) {
       const res = await fetch(`${BASE_URL}/products/${id}`);
       const data = await res.json();
       setCurrentProduct(data);
+      setIsLoading(false);
     } catch (err) {
       console.log(err);
     } finally {
-      setIsLoading(true);
+      setIsLoading(false);
     }
   }
 
