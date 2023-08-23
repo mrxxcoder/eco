@@ -1,5 +1,4 @@
 import { useProducts } from "../contexts/ProductsContext";
-import styles from "./CartProduct.module.css";
 
 function CartProduct({ title, price, image, id }) {
   const { productQuantities, setProductQuantities, removeFromCart } =
@@ -22,27 +21,43 @@ function CartProduct({ title, price, image, id }) {
   let totalProductPrice = productQuantities[id] * price;
 
   return (
-    <div className={styles.cartItem}>
-      <div className={styles.imgBox}>
-        <div className={styles.image}>
-          <img src={image} alt="product img" />
+    <div className="min-h-cart flex items-center justify-between bg-gray-200 even:bg-slate-50 px-8 lg:p-4 lg:flex-col lg:gap-5">
+      <div className="flex items-center w-2/5 lg:w-full md:flex-col gap-5">
+        <div className="w-40 h-32 overflow-hidden flex justify-center items-center">
+          <img
+            className="w-full h-full mix-blend-multiply"
+            src={image}
+            alt="product img"
+          />
         </div>
-        <div className={styles.info}>
+        <div className="max-w-2/5">
           <h1>{title}</h1>
         </div>
       </div>
 
-      <div className={styles.controls}>
-        <div className={styles.amount}>
-          <button onClick={() => handleDecrement(id)}>-</button>
-          <p>{productQuantities[id]}</p>
-          <button onClick={() => handleIncrement(id)}>+</button>
+      <div className="flex items-center gap-5 justify-around w-full md:flex-col">
+        <div className="flex items-center gap-3">
+          <button
+            className="border-none outline-none bg-transparent text-3xl m-2.5 cursor-pointer"
+            onClick={() => handleDecrement(id)}
+          >
+            -
+          </button>
+          <p className="text-lg font-bold border border-solid border-slate-300 px-8 py-1.5 rounded">
+            {productQuantities[id]}
+          </p>
+          <button
+            className="border-none outline-none bg-transparent text-3xl m-2.5 cursor-pointer"
+            onClick={() => handleIncrement(id)}
+          >
+            +
+          </button>
         </div>
-        <div className={styles.price}>
-          <div className={styles.productTotal}>
-            ${totalProductPrice.toFixed(2)}
-          </div>
-          <button onClick={() => removeFromCart(id)}>&times;</button>
+        <div className="flex items-center justify-around pl-12 w-4/6 md:flex-col md:pl-0">
+          <div className="text-2xl mt-2">${totalProductPrice.toFixed(2)}</div>
+          <button className="text-3xl mt-2" onClick={() => removeFromCart(id)}>
+            &times;
+          </button>
         </div>
       </div>
     </div>

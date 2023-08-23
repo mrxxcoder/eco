@@ -2,7 +2,6 @@ import CartList from "../components/CartList";
 import Message from "../components/Message";
 import Nav from "../components/Nav";
 import { useProducts } from "../contexts/ProductsContext";
-import styles from "./Cart.module.css";
 
 function Cart() {
   const { clearCart, cartProducts } = useProducts();
@@ -10,8 +9,8 @@ function Cart() {
     <section>
       <Nav />
       {cartProducts.length > 0 ? (
-        <div className={styles.cart}>
-          <div className={styles.total}>
+        <div className="min-h-screen py-20 px-40 lg:px-20 sm:px-10">
+          <div>
             {cartProducts.length > 0 && (
               <button className="btn btn-primary mb-4" onClick={clearCart}>
                 Clear Cart

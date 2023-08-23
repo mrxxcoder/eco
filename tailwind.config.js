@@ -7,6 +7,9 @@ module.exports = {
         // Simple 16 column grid
         new4: "repeat(4, minmax(100px, 500px))",
       },
+      minHeight: {
+        cart: "190px",
+      },
     },
     screens: {
       xl: { max: "1279px" },
