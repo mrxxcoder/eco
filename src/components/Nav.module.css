@@ -1,0 +1,60 @@
+.nav {
+  display: flex;
+  background-color: rgb(250, 249, 249);
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 639px) {
+  .nav {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+@media (max-width: 639px) {
+  .nav ul {
+    gap: 1rem;
+  }
+}
+
+.nav a:link,
+.nav a:visited {
+  text-decoration: none;
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+@media (max-width: 639px) {
+  .nav a:link,
+  .nav a:visited {
+    font-size: 1rem;
+  }
+}
+
+.cartIcon {
+  position: relative;
+}
+
+.cartIcon p {
+  position: absolute;
+  background-color: #fa78df;
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 50%;
+  top: -10px;
+  left: -12px;
+}

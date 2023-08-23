@@ -1,0 +1,15 @@
+.popularHeading {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.popularHeading::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: -10px;
+  background-color: #f000b8;
+}
