@@ -32,9 +32,9 @@ function Product() {
   return (
     <div>
       <Nav />
-      <section className="p-36 lg:p-8 md:p-5 flex md:flex-col gap-5">
-        <div className="basis-1/2 md:flex-1 mt-16">
-          <img className="" src={image} alt="product img" />
+      <section className="p-36 lg:p-8 md:p-5 flex md:flex-col md:justify-center gap-20">
+        <div className="flex items-center justify-center basis-1/2 md:flex-1 mt-16 md:p-6">
+          <img className="w-96" src={image} alt="product img" />
         </div>
         <div className="basis-1/2 md:flex-1 mt-16">
           <h1 className="mb-8 text-3xl font-bold">{title}</h1>
